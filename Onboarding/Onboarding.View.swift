@@ -49,7 +49,6 @@ struct ScreenView: View {
                     Spacer()
                     
                     Button(action: {
-                        // Skip to last page
                         currentPage = totalPages - 1
                     }, label: {
                         Text("Skip")
