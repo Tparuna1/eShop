@@ -47,23 +47,18 @@ struct ScreenView: View {
                     .kerning(1.2)
                     .multilineTextAlignment(.center)
                 
-                Button(action: {
-                    if index < totalPages - 1 {
-                        currentPage += 1
-                    } else {
-                        print("Onboarding finished")
+                let buttonText = index < totalPages - 1 ?
+                    LocalizedStrings.Onboarding.Button.next :
+                    LocalizedStrings.Onboarding.Button.getStarted
+                
+                MainButton(buttonText: buttonText)
+                    .onTapGesture {
+                        if index < totalPages - 1 {
+                            currentPage += 1
+                        } else {
+                            print("Onboarding finished")
+                        }
                     }
-                }, label: {
-                    Text(index < totalPages - 1 ? LocalizedStrings.Onboarding.Button.next : LocalizedStrings.Onboarding.Button.getStarted)
-                        .fontWeight(.semibold)
-                        .kerning(1.2)
-                        .frame(minWidth: .zero, maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(.blue)
-                        .background(Color.white)
-                        .cornerRadius(40)
-                        .padding(.horizontal, 16)
-                })
             }
         }
         .tag(index)
