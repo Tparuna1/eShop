@@ -14,3 +14,6 @@
 "onboarding.button.next" = "Next";
 "onboarding.button.skip" = "Skip";
 "onboarding.button.get_started" = "Get Started";
+"onboarding.create_acount" = "Create account";
+"onboarding.button.log_in" = "Log In";
+"onboarding.button.sign_up" = "Sign Up";

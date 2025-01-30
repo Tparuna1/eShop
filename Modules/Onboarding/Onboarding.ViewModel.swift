@@ -10,7 +10,8 @@ import Foundation
 class OnboardingViewModel: ObservableObject {
     @Published var pages: [OnboardingPage] = [
         OnboardingPage(image: .onboarding1, title: LocalizedStrings.Onboarding.welcomeMessage, details: LocalizedStrings.Onboarding.findYourFavClothes),
-        OnboardingPage(image: .onboarding2, title: LocalizedStrings.Onboarding.fastSecure, details: LocalizedStrings.Onboarding.enjoyWithShopping)
+        OnboardingPage(image: .onboarding2, title: LocalizedStrings.Onboarding.fastSecure, details: LocalizedStrings.Onboarding.enjoyWithShopping),
+        OnboardingPage(image: .onboarding3, title: LocalizedStrings.Onboarding.createAcount, details: nil, isFinalPage: true)
     ]
     
     @Published var currentPage = 0
@@ -27,3 +28,4 @@ class OnboardingViewModel: ObservableObject {
         currentPage = pages.count - 1
     }
 }
+

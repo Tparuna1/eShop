@@ -16,7 +16,6 @@ struct Onboarding: View {
                 ScreenView(
                     page: viewModel.pages[index],
                     currentPage: $viewModel.currentPage,
-                    index: index,
                     totalPages: viewModel.pages.count
                 )
             }
@@ -25,7 +24,6 @@ struct Onboarding: View {
         .ignoresSafeArea()
     }
 }
-
 
 #Preview {
     Onboarding()

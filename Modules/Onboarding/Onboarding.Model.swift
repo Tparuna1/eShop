@@ -10,7 +10,6 @@ import SwiftUI
 struct OnboardingPage {
     var image: Image
     var title: String
-    var details: String
+    var details: String?
+    var isFinalPage: Bool = false
 }
-
-

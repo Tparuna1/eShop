@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum LocalizedStrings {
   internal enum Onboarding {
+    /// Create account
+    internal static let createAcount = LocalizedStrings.tr("localizable", "onboarding.create_acount", fallback: "Create account")
     /// Enjoy a smooth and secure shopping experience
     internal static let enjoyWithShopping = LocalizedStrings.tr("localizable", "onboarding.enjoy_with_shopping", fallback: "Enjoy a smooth and secure shopping experience")
     /// Fast & Secure
@@ -25,8 +27,12 @@ internal enum LocalizedStrings {
     internal enum Button {
       /// Get Started
       internal static let getStarted = LocalizedStrings.tr("localizable", "onboarding.button.get_started", fallback: "Get Started")
+      /// Log In
+      internal static let logIn = LocalizedStrings.tr("localizable", "onboarding.button.log_in", fallback: "Log In")
       /// Next
       internal static let next = LocalizedStrings.tr("localizable", "onboarding.button.next", fallback: "Next")
+      /// Sign Up
+      internal static let signUp = LocalizedStrings.tr("localizable", "onboarding.button.sign_up", fallback: "Sign Up")
       /// Skip
       internal static let skip = LocalizedStrings.tr("localizable", "onboarding.button.skip", fallback: "Skip")
     }

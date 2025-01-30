@@ -10,7 +10,6 @@ import SwiftUI
 struct ScreenView: View {
     var page: OnboardingPage
     @Binding var currentPage: Int
-    var index: Int
     var totalPages: Int
     
     var body: some View {
@@ -29,7 +28,11 @@ struct ScreenView: View {
                     Spacer()
                     
                     Button(action: {
-                        currentPage = totalPages - 1
+                        if page.isFinalPage {
+                            print("Handle final onboarding skip action")
+                        } else {
+                            currentPage = totalPages - 1
+                        }
                     }, label: {
                         Text(LocalizedStrings.Onboarding.Button.skip)
                             .fontWeight(.semibold)
@@ -41,26 +44,34 @@ struct ScreenView: View {
                 
                 Spacer(minLength: .zero)
                 
-                Text(page.details)
-                    .font(.body)
-                    .fontWeight(.regular)
-                    .kerning(Sizes.Kerning.regular)
-                    .multilineTextAlignment(.center)
-                
-                let buttonText = index < totalPages - 1 ?
-                    LocalizedStrings.Onboarding.Button.next :
-                    LocalizedStrings.Onboarding.Button.getStarted
-                
-                MainButton(buttonText: buttonText)
-                    .onTapGesture {
-                        if index < totalPages - 1 {
-                            currentPage += 1
-                        } else {
-                            print("Onboarding finished")
-                        }
+                if let details = page.details {
+                    Text(details)
+                        .font(.body)
+                        .fontWeight(.regular)
+                        .kerning(Sizes.Kerning.regular)
+                        .multilineTextAlignment(.center)
+                } else {
+                    VStack(spacing: Sizes.Spacing.m) {
+                        MainButton(buttonText: LocalizedStrings.Onboarding.Button.signUp)
+                            .onTapGesture {
+                                print("Navigate to Sign Up")
+                            }
+                        
+                        MainButton(buttonText: LocalizedStrings.Onboarding.Button.logIn)
+                            .onTapGesture {
+                                print("Navigate to Log In")
+                            }
                     }
+                }
+                
+                if !page.isFinalPage {
+                    MainButton(buttonText: LocalizedStrings.Onboarding.Button.next)
+                        .onTapGesture {
+                            currentPage += 1
+                        }
+                }
             }
         }
-        .tag(index)
     }
 }
+
