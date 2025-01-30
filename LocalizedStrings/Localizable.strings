@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  eShop
+
+  Created by tornike <parunashvili on 30.01.25.
+  
+*/
+
+//MARK: Onboarding
+"onboarding.welcome_message" = "Welcome to eShop";
+"onboarding.find_your_fav_clothes" = "Find your favourite clothes with us";
+"onboarding.fast_secure" = "Fast & Secure";
+"onboarding.enjoy_with_shopping" = "Enjoy a smooth and secure shopping experience";
+"onboarding.button.next" = "Next";
+"onboarding.button.skip" = "Skip";
+"onboarding.button.get_started" = "Get Started";
