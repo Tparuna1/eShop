@@ -12,9 +12,9 @@ struct Onboarding: View {
     
     var body: some View {
         TabView(selection: $currentPage) {
-            ScreenView(image: "Onboarding1", title: "Welcome to eShop", details: "Find your favourite Clothes with Us", currentPage: $currentPage, index: 0, totalPages: 2)
+            ScreenView(image: .onboarding1, title: LocalizedStrings.Onboarding.welcomeMessage, details: LocalizedStrings.Onboarding.findYourFavClothes, currentPage: $currentPage, index: 0, totalPages: 2)
             
-            ScreenView(image: "Onboarding2", title: "Fast & Secure", details: "Enjoy a smooth and secure shopping experience", currentPage: $currentPage, index: 1, totalPages: 2)
+            ScreenView(image: .onboarding2, title: LocalizedStrings.Onboarding.fastSecure, details: LocalizedStrings.Onboarding.enjoyWithShopping, currentPage: $currentPage, index: 1, totalPages: 2)
         }
         .tabViewStyle(PageTabViewStyle())
         .ignoresSafeArea()
@@ -26,7 +26,7 @@ struct Onboarding: View {
 }
 
 struct ScreenView: View {
-    var image: String
+    var image: Image
     var title: String
     var details: String
     @Binding var currentPage: Int
@@ -35,7 +35,7 @@ struct ScreenView: View {
     
     var body: some View {
         ZStack {
-            Image(image)
+            image
                 .resizable()
                 .ignoresSafeArea()
             
@@ -51,7 +51,7 @@ struct ScreenView: View {
                     Button(action: {
                         currentPage = totalPages - 1
                     }, label: {
-                        Text("Skip")
+                        Text(LocalizedStrings.Onboarding.Button.skip)
                             .fontWeight(.semibold)
                             .kerning(1.2)
                     })
@@ -74,7 +74,7 @@ struct ScreenView: View {
                         print("Onboarding finished")
                     }
                 }, label: {
-                    Text(index < totalPages - 1 ? "Next" : "Get Started")
+                    Text(index < totalPages - 1 ? LocalizedStrings.Onboarding.Button.next : LocalizedStrings.Onboarding.Button.getStarted)
                         .fontWeight(.semibold)
                         .kerning(1.2)
                         .frame(minWidth: .zero, maxWidth: .infinity)
@@ -89,4 +89,3 @@ struct ScreenView: View {
         .tag(index)
     }
 }
-
