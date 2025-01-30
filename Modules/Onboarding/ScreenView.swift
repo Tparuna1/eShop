@@ -24,7 +24,7 @@ struct ScreenView: View {
                     Text(page.title)
                         .font(.title)
                         .fontWeight(.semibold)
-                        .kerning(1.4)
+                        .kerning(Sizes.Kerning.thick)
                     
                     Spacer()
                     
@@ -33,7 +33,7 @@ struct ScreenView: View {
                     }, label: {
                         Text(LocalizedStrings.Onboarding.Button.skip)
                             .fontWeight(.semibold)
-                            .kerning(1.2)
+                            .kerning(Sizes.Kerning.regular)
                     })
                 }
                 .padding()
@@ -44,7 +44,7 @@ struct ScreenView: View {
                 Text(page.details)
                     .font(.body)
                     .fontWeight(.regular)
-                    .kerning(1.2)
+                    .kerning(Sizes.Kerning.regular)
                     .multilineTextAlignment(.center)
                 
                 let buttonText = index < totalPages - 1 ?
