@@ -16,7 +16,7 @@ class OnboardingViewModel: ObservableObject {
     
     @Published var currentPage = 0
     
-    func goToNextPage() {
+    private func goToNextPage() {
         if currentPage < pages.count - 1 {
             currentPage += 1
         } else {
@@ -24,7 +24,7 @@ class OnboardingViewModel: ObservableObject {
         }
     }
     
-    func skipOnboarding() {
+    private func skipOnboarding() {
         currentPage = pages.count - 1
     }
 }
