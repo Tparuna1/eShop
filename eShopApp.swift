@@ -9,9 +9,28 @@ import SwiftUI
 
 @main
 struct eShopApp: App {
+    @StateObject private var coordinator = AppCoordinator()
+
     var body: some Scene {
         WindowGroup {
-            Onboarding()
+            RootView()
+                .environmentObject(coordinator)
         }
     }
 }
+
+struct RootView: View {
+    @EnvironmentObject private var coordinator: AppCoordinator
+
+    var body: some View {
+        switch coordinator.currentScreen {
+        case .onboarding:
+            Onboarding()
+        case .signUp:
+            SignUpView()
+        case .logIn:
+            LoginView()
+        }
+    }
+}
+

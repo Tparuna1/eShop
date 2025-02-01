@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ScreenView: View {
+    @EnvironmentObject private var coordinator: AppCoordinator
     var page: OnboardingPage
     @Binding var currentPage: Int
     var totalPages: Int
-    
+
     var body: some View {
         ZStack {
             page.image
@@ -29,7 +30,7 @@ struct ScreenView: View {
                     
                     Button(action: {
                         if page.isFinalPage {
-                            print("Handle final onboarding skip action")
+                            coordinator.navigate(to: .signUp)
                         } else {
                             currentPage = totalPages - 1
                         }
@@ -54,12 +55,12 @@ struct ScreenView: View {
                     VStack(spacing: Sizes.Spacing.m) {
                         MainButton(buttonText: LocalizedStrings.Onboarding.Button.signUp)
                             .onTapGesture {
-                                print("Navigate to Sign Up")
+                                coordinator.navigate(to: .signUp)
                             }
                         
                         MainButton(buttonText: LocalizedStrings.Onboarding.Button.logIn)
                             .onTapGesture {
-                                print("Navigate to Log In")
+                                coordinator.navigate(to: .logIn)
                             }
                     }
                 }

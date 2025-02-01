@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Onboarding: View {
+    @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject private var viewModel = OnboardingViewModel()
-    
+
     var body: some View {
         TabView(selection: $viewModel.currentPage) {
             ForEach(0..<viewModel.pages.count, id: \.self) { index in
@@ -18,12 +19,14 @@ struct Onboarding: View {
                     currentPage: $viewModel.currentPage,
                     totalPages: viewModel.pages.count
                 )
+                .tag(index)
             }
         }
         .tabViewStyle(PageTabViewStyle())
         .ignoresSafeArea()
     }
 }
+
 
 #Preview {
     Onboarding()
