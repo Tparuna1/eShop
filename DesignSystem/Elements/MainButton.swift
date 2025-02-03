@@ -9,16 +9,18 @@ import SwiftUI
 
 struct MainButton: View {
     var buttonText: String
-
+    var backgroundColor: Color
+    var textColor: Color
+    
     var body: some View {
         Text(buttonText)
             .fontWeight(.semibold)
             .kerning(Sizes.Kerning.regular)
             .frame(minWidth: .zero, maxWidth: .infinity)
             .padding()
-            .foregroundColor(.babyBlue)
-            .background(Color.cottonWhite)
-            .cornerRadius(Sizes.Spacing.xl4)
+            .foregroundColor(textColor)
+            .background(backgroundColor)
+            .cornerRadius(Sizes.Spacing.s)
             .padding(.horizontal, Sizes.Spacing.m)
     }
 }

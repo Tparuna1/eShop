@@ -7,13 +7,20 @@
 */
 
 //MARK: Onboarding
-"onboarding.welcome_message" = "Welcome to eShop";
-"onboarding.find_your_fav_clothes" = "Find your favourite clothes with us";
-"onboarding.fast_secure" = "Fast & Secure";
-"onboarding.enjoy_with_shopping" = "Enjoy a smooth and secure shopping experience";
+"onboarding.text.welcome_message" = "Welcome to eShop";
+"onboarding.text.find_your_fav_clothes" = "Find your favourite clothes with us";
+"onboarding.text.fast_secure" = "Fast & Secure";
+"onboarding.text.enjoy_with_shopping" = "Enjoy a smooth and secure shopping experience";
 "onboarding.button.next" = "Next";
 "onboarding.button.skip" = "Skip";
 "onboarding.button.get_started" = "Get Started";
-"onboarding.create_acount" = "Create account";
-"onboarding.button.log_in" = "Log In";
-"onboarding.button.sign_up" = "Sign Up";
+"onboarding.text.create_acount" = "Create account";
+
+
+//MARK: SignIn - SignUp
+"log_In.button.sign_in" = "Sign In";
+"log_In.button.sign_up" = "Sign Up";
+"log_In.text.emais_address" = "Email adress";
+"log_In.text.sample_emais_address" = "name@example.com";
+"log_In.text.password" = "Password";
+"log_In.text.sample_password" = "Enter password";

@@ -9,9 +9,9 @@ import Foundation
 
 class OnboardingViewModel: ObservableObject {
     @Published var pages: [OnboardingPage] = [
-        OnboardingPage(image: .onboarding1, title: LocalizedStrings.Onboarding.welcomeMessage, details: LocalizedStrings.Onboarding.findYourFavClothes),
-        OnboardingPage(image: .onboarding2, title: LocalizedStrings.Onboarding.fastSecure, details: LocalizedStrings.Onboarding.enjoyWithShopping),
-        OnboardingPage(image: .onboarding3, title: LocalizedStrings.Onboarding.createAcount, details: nil, isFinalPage: true)
+        OnboardingPage(image: .onboarding1, title: LocalizedStrings.Onboarding.Text.welcomeMessage, details: LocalizedStrings.Onboarding.Text.findYourFavClothes),
+        OnboardingPage(image: .onboarding2, title: LocalizedStrings.Onboarding.Text.fastSecure, details: LocalizedStrings.Onboarding.Text.enjoyWithShopping),
+        OnboardingPage(image: .onboarding3, title: LocalizedStrings.Onboarding.Text.createAcount, details: nil, isFinalPage: true)
     ]
     
     @Published var currentPage = 0

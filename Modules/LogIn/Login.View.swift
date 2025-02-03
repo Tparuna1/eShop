@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
+    @EnvironmentObject private var coordinator: AppCoordinator
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                VStack(spacing: Sizes.Spacing.xl) {
+                    InputView(text: $viewModel.email,
+                              title: LocalizedStrings.LogIn.Text.emaisAddress,
+                              placeholder: LocalizedStrings.LogIn.Text.sampleEmaisAddress)
+                    .autocapitalization(.none)
+                    
+                    InputView(text: $viewModel.password,
+                              title: LocalizedStrings.LogIn.Text.password,
+                              placeholder: LocalizedStrings.LogIn.Text.samplePassword,
+                              isSecureField: true)
+                    
+                    MainButton(buttonText: LocalizedStrings.LogIn.Button.signIn,
+                               backgroundColor: .mediumBlue,
+                               textColor: .cottonWhite)
+                        .onTapGesture {
+                            coordinator.navigate(to: .signUp)
+                    }
+                }
+                .padding(.horizontal)
+            }
+        }
     }
 }
 

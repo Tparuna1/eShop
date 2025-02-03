@@ -12,7 +12,7 @@ struct ScreenView: View {
     var page: OnboardingPage
     @Binding var currentPage: Int
     var totalPages: Int
-
+    
     var body: some View {
         ZStack {
             page.image
@@ -53,23 +53,29 @@ struct ScreenView: View {
                         .multilineTextAlignment(.center)
                 } else {
                     VStack(spacing: Sizes.Spacing.m) {
-                        MainButton(buttonText: LocalizedStrings.Onboarding.Button.signUp)
-                            .onTapGesture {
-                                coordinator.navigate(to: .signUp)
-                            }
+                        MainButton(buttonText: LocalizedStrings.LogIn.Button.signIn,
+                                   backgroundColor: .cottonWhite,
+                                   textColor: .babyBlue)
+                        .onTapGesture {
+                            coordinator.navigate(to: .logIn)
+                        }
                         
-                        MainButton(buttonText: LocalizedStrings.Onboarding.Button.logIn)
-                            .onTapGesture {
-                                coordinator.navigate(to: .logIn)
-                            }
+                        MainButton(buttonText: LocalizedStrings.LogIn.Button.signUp,
+                                   backgroundColor: .cottonWhite,
+                                   textColor: .babyBlue)
+                        .onTapGesture {
+                            coordinator.navigate(to: .signUp)
+                        }
                     }
                 }
                 
                 if !page.isFinalPage {
-                    MainButton(buttonText: LocalizedStrings.Onboarding.Button.next)
-                        .onTapGesture {
-                            currentPage += 1
-                        }
+                    MainButton(buttonText: LocalizedStrings.Onboarding.Button.next,
+                               backgroundColor: .cottonWhite,
+                               textColor: .babyBlue)
+                    .onTapGesture {
+                        currentPage += 1
+                    }
                 }
             }
         }
