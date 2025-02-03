@@ -24,3 +24,4 @@
 "log_In.text.sample_emais_address" = "name@example.com";
 "log_In.text.password" = "Password";
 "log_In.text.sample_password" = "Enter password";
+"log_In.button.do_not_have_an_account_sign_up" = "Do not have an acount? Sign Up";

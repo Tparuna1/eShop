@@ -12,6 +12,8 @@ import Foundation
 internal enum LocalizedStrings {
   internal enum LogIn {
     internal enum Button {
+      /// Do not have an acount? Sign Up
+      internal static let doNotHaveAnAccountSignUp = LocalizedStrings.tr("localizable", "log_In.button.do_not_have_an_account_sign_up", fallback: "Do not have an acount? Sign Up")
       /// Sign In
       internal static let signIn = LocalizedStrings.tr("localizable", "log_In.button.sign_in", fallback: "Sign In")
       /// Sign Up

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Sizes {
+public enum Grid {
     public enum Spacing {
         public static let xs4: CGFloat = 1.0
         public static let xs3: CGFloat = 2.0
@@ -38,5 +38,11 @@ public enum Sizes {
     public enum CornerRadius {
         public static let textField: CGFloat = 10.0
         public static let button: CGFloat = 24.0
+    }
+    
+    public enum Size {
+        public static let small: CGSize = .init(squareFrame: 100)
+        public static let medium: CGSize = .init(squareFrame: 300)
+        public static let large: CGSize = .init(squareFrame: 600)
     }
 }

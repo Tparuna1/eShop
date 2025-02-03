@@ -24,21 +24,17 @@ struct ScreenView: View {
                     Text(page.title)
                         .font(.title)
                         .fontWeight(.semibold)
-                        .kerning(Sizes.Kerning.thick)
+                        .kerning(Grid.Kerning.thick)
                     
                     Spacer()
                     
-                    Button(action: {
+                    SecondaryButton(title: LocalizedStrings.Onboarding.Button.skip, textColor: .mediumBlue) {
                         if page.isFinalPage {
                             coordinator.navigate(to: .signUp)
                         } else {
                             currentPage = totalPages - 1
                         }
-                    }, label: {
-                        Text(LocalizedStrings.Onboarding.Button.skip)
-                            .fontWeight(.semibold)
-                            .kerning(Sizes.Kerning.regular)
-                    })
+                    }
                 }
                 .padding()
                 .foregroundColor(.black)
@@ -49,10 +45,10 @@ struct ScreenView: View {
                     Text(details)
                         .font(.body)
                         .fontWeight(.regular)
-                        .kerning(Sizes.Kerning.regular)
+                        .kerning(Grid.Kerning.regular)
                         .multilineTextAlignment(.center)
                 } else {
-                    VStack(spacing: Sizes.Spacing.m) {
+                    VStack(spacing: Grid.Spacing.m) {
                         MainButton(buttonText: LocalizedStrings.LogIn.Button.signIn,
                                    backgroundColor: .cottonWhite,
                                    textColor: .babyBlue)

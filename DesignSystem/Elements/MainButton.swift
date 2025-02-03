@@ -15,12 +15,12 @@ struct MainButton: View {
     var body: some View {
         Text(buttonText)
             .fontWeight(.semibold)
-            .kerning(Sizes.Kerning.regular)
+            .kerning(Grid.Kerning.regular)
             .frame(minWidth: .zero, maxWidth: .infinity)
             .padding()
             .foregroundColor(textColor)
             .background(backgroundColor)
-            .cornerRadius(Sizes.Spacing.s)
-            .padding(.horizontal, Sizes.Spacing.m)
+            .cornerRadius(Grid.Spacing.s)
+            .padding(.horizontal, Grid.Spacing.m)
     }
 }
