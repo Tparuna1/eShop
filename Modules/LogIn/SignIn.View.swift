@@ -1,5 +1,5 @@
 //
-//  Login.View.swift
+//  SignIn.View.swift
 //  eShop
 //
 //  Created by tornike <parunashvili on 31.01.25.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
+//MARK: - Sign In View
+struct SignInView: View {
+    @StateObject private var viewModel = SignInViewModel()
     @EnvironmentObject private var coordinator: AppCoordinator
     
     var body: some View {
@@ -52,5 +53,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    SignInView()
 }

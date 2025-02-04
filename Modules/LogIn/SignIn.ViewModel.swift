@@ -1,5 +1,5 @@
 //
-//  Login.ViewModel.swift
+//  SignIn.ViewModel.swift
 //  eShop
 //
 //  Created by tornike <parunashvili on 31.01.25.
@@ -7,12 +7,13 @@
 
 import Foundation
 
-class LoginViewModel: ObservableObject {
+//MARK: - Sign in ViewModel
+class SignInViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
 
-    private var loginModel: LoginModel {
-        return LoginModel(email: email, password: password)
+    private var signInModel: SignInModel {
+        return SignInModel(email: email, password: password)
     }
     
     func login() {

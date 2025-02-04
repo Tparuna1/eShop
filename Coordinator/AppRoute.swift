@@ -7,8 +7,9 @@
 
 import Foundation
 
+/// Defines app screens for navigation
 enum AppScreen {
     case onboarding
     case signUp
-    case logIn
+    case signIn
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - Main button
 struct MainButton: View {
     var buttonText: String
     var backgroundColor: Color

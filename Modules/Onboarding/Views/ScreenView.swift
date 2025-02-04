@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+//MARK: - Onboarding Screens
 struct ScreenView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
-    var page: OnboardingPage
+    var page: OnboardingModel
     @Binding var currentPage: Int
     var totalPages: Int
     
@@ -53,7 +54,7 @@ struct ScreenView: View {
                                    backgroundColor: .cottonWhite,
                                    textColor: .babyBlue)
                         .onTapGesture {
-                            coordinator.navigate(to: .logIn)
+                            coordinator.navigate(to: .signIn)
                         }
                         
                         MainButton(buttonText: LocalizedStrings.LogIn.Button.signUp,

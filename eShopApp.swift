@@ -28,8 +28,8 @@ struct RootView: View {
             Onboarding()
         case .signUp:
             SignUpView()
-        case .logIn:
-            LoginView()
+        case .signIn:
+            SignInView()
         }
     }
 }

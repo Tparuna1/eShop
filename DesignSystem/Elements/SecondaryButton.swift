@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - Secondary button as textButton
 struct SecondaryButton: View {
     var title: String
     var textColor: Color

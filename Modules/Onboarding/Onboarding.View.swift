@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - Main View for use Onboarding ScreenView
 struct Onboarding: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject private var viewModel = OnboardingViewModel()

@@ -7,11 +7,12 @@
 
 import Foundation
 
+//MARK: OnboardingViewModel
 class OnboardingViewModel: ObservableObject {
-    @Published var pages: [OnboardingPage] = [
-        OnboardingPage(image: .onboarding1, title: LocalizedStrings.Onboarding.Text.welcomeMessage, details: LocalizedStrings.Onboarding.Text.findYourFavClothes),
-        OnboardingPage(image: .onboarding2, title: LocalizedStrings.Onboarding.Text.fastSecure, details: LocalizedStrings.Onboarding.Text.enjoyWithShopping),
-        OnboardingPage(image: .onboarding3, title: LocalizedStrings.Onboarding.Text.createAcount, details: nil, isFinalPage: true)
+    @Published var pages: [OnboardingModel] = [
+        OnboardingModel(image: .onboarding1, title: LocalizedStrings.Onboarding.Text.welcomeMessage, details: LocalizedStrings.Onboarding.Text.findYourFavClothes),
+        OnboardingModel(image: .onboarding2, title: LocalizedStrings.Onboarding.Text.fastSecure, details: LocalizedStrings.Onboarding.Text.enjoyWithShopping),
+        OnboardingModel(image: .onboarding3, title: LocalizedStrings.Onboarding.Text.createAcount, details: nil, isFinalPage: true)
     ]
     
     @Published var currentPage = 0

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Image extenstion for localization
 extension Image {
     static let onboarding1 = Image("Onboarding1")
     static let onboarding2 = Image("Onboarding2")

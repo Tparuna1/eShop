@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - Custom Text input field
 struct InputView: View {
     @Binding var text: String
     let title: String
