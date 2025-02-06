@@ -18,10 +18,15 @@
 
 
 //MARK: SignIn - SignUp
-"log_In.button.sign_in" = "Sign In";
-"log_In.button.sign_up" = "Sign Up";
-"log_In.text.emais_address" = "Email adress";
-"log_In.text.sample_emais_address" = "name@example.com";
-"log_In.text.password" = "Password";
-"log_In.text.sample_password" = "Enter password";
-"log_In.button.do_not_have_an_account_sign_up" = "Do not have an acount? Sign Up";
+"sign_in.button.sign_in" = "Sign In";
+"sign_in.button.sign_up" = "Sign Up";
+"sign_in.text.email_address" = "Email adress";
+"sign_in.text.sample_email_address" = "name@example.com";
+"sign_in.text.password" = "Password";
+"sign_in.text.sample_password" = "Enter password";
+"sign_in.button.do_not_have_an_account_sign_up" = "Do not have an acount? Sign Up";
+"sign_in.text.full_name" = "Full Name";
+"sign_in.text.sample_full_name" = "John Doe";
+"sign_in.text.confirm_password" = "Confirm Password";
+"sign_in.text.sample_confirm_password" = "Re-enter your password";
+"lsign_in.button.already_have_an_account_sign_in" = "Already have an account? Sign In";

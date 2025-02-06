@@ -50,14 +50,14 @@ struct ScreenView: View {
                         .multilineTextAlignment(.center)
                 } else {
                     VStack(spacing: Grid.Spacing.m) {
-                        MainButton(buttonText: LocalizedStrings.LogIn.Button.signIn,
+                        MainButton(buttonText: LocalizedStrings.SignIn.Button.signIn,
                                    backgroundColor: .cottonWhite,
                                    textColor: .babyBlue)
                         .onTapGesture {
                             coordinator.navigate(to: .signIn)
                         }
                         
-                        MainButton(buttonText: LocalizedStrings.LogIn.Button.signUp,
+                        MainButton(buttonText: LocalizedStrings.SignIn.Button.signUp,
                                    backgroundColor: .cottonWhite,
                                    textColor: .babyBlue)
                         .onTapGesture {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: SignIn
+//MARK: Sign In Model
 struct SignInModel {
     var email: String
     var password: String

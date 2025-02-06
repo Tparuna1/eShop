@@ -7,17 +7,31 @@
 
 import SwiftUI
 
-/// `AppCoordinator` is responsible for managing navigation across the app.
-/// It holds the current screen and updates it when navigation occurs.
 class AppCoordinator: ObservableObject {
+    @Published private(set) var navigationStack: [AppScreen] = [.onboarding]
     
-    /// The currently active screen in the app.
-    /// Using `@Published` ensures that SwiftUI views listening to this property will update when it changes.
-    @Published var currentScreen: AppScreen = .onboarding
+    /// Returns the current screen (last in the stack)
+    var currentScreen: AppScreen {
+        navigationStack.last ?? .onboarding
+    }
     
-    /// Updates `currentScreen` to navigate to a different screen.
-    /// - Parameter screen: The new screen to navigate to.
+    /// Navigates to a new screen by pushing it onto the stack
     func navigate(to screen: AppScreen) {
-        currentScreen = screen
+        navigationStack.append(screen)
+    }
+    
+    /// Pops the last screen to navigate back
+    func popScreen() {
+        guard navigationStack.dropLast().last != nil else { return }
+        navigationStack.removeLast()
+    }
+    
+    /// New method to skip directly to the last onboarding page
+    func goToLastOnboardingPage() {
+        if navigationStack.last != .onboarding {
+            navigationStack = [.onboarding]
+        }
+        navigationStack.append(.onboarding)
     }
 }
+

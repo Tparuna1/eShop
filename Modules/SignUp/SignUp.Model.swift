@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+//MARK: Sign Up Model
+struct SignUpModel {
+    var fullName: String
+    var email: String
+    var password: String
+}
