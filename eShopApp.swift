@@ -30,6 +30,8 @@ struct RootView: View {
             SignUpView()
         case .signIn:
             SignInView()
+        case .profile:
+            ProfileView()
         }
     }
 }

@@ -20,7 +20,7 @@ public enum Grid {
         public static let xl: CGFloat = 24.0
         public static let xl2: CGFloat = 28.0
         public static let xl3: CGFloat = 32.0
-        public static let xl4: CGFloat = 40.0
+        public static let xl4: CGFloat = 40.0 
         public static let xl5: CGFloat = 48.0
     }
 

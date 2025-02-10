@@ -36,7 +36,7 @@ struct SignInView: View {
                                textColor: .cottonWhite)
                         .onTapGesture {
                             viewModel.login()
-                            coordinator.navigate(to: .signUp)
+                            coordinator.navigate(to: .profile)
                         }
                     Spacer()
 

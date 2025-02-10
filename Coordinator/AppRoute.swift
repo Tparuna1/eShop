@@ -12,4 +12,5 @@ enum AppScreen {
     case onboarding
     case signUp
     case signIn
+    case profile
 }

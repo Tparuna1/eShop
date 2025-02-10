@@ -43,7 +43,7 @@ struct SignUpView: View {
                                textColor: .cottonWhite)
                     .onTapGesture {
                         viewModel.signUp()
-                        coordinator.navigate(to: .signIn)
+                        coordinator.navigate(to: .profile)
                     }
                     Spacer()
                 }
@@ -52,7 +52,7 @@ struct SignUpView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         coordinator.goToLastOnboardingPage()
-                    }) {
+                    }) { 
                         Image(systemName: "arrow.left")
                             .foregroundColor(.black)
                     }
