@@ -31,7 +31,7 @@ struct ScreenView: View {
                     
                     SecondaryButton(title: LocalizedStrings.Onboarding.Button.skip, textColor: .mediumBlue) {
                         if page.isFinalPage {
-                            coordinator.navigate(to: .signUp)
+                            coordinator.navigate(to: .mainTab)
                         } else {
                             currentPage = totalPages - 1
                         }

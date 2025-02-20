@@ -84,7 +84,7 @@ struct SignUpView: View {
                         Task {
                             await viewModel.signUp()
                             if viewModel.errorMessage == nil {
-                                coordinator.navigate(to: .profile)
+                                coordinator.navigate(to: .mainTab)
                             }
                         }
                     }
