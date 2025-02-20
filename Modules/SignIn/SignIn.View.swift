@@ -33,7 +33,7 @@ struct SignInView: View {
 
                     if let errorMessage = viewModel.errorMessage {
                         Text(errorMessage)
-                            .foregroundColor(.red)
+                            .foregroundColor(.darkRed)
                             .padding(.top, Grid.Spacing.xs)
                     }
 
