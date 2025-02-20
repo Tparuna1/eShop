@@ -7,18 +7,20 @@
 
 import SwiftUI
 
+//MARK: - Main View for use Onboarding ScreenView
 struct Onboarding: View {
+    @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject private var viewModel = OnboardingViewModel()
-    
+
     var body: some View {
         TabView(selection: $viewModel.currentPage) {
             ForEach(0..<viewModel.pages.count, id: \.self) { index in
                 ScreenView(
                     page: viewModel.pages[index],
                     currentPage: $viewModel.currentPage,
-                    index: index,
                     totalPages: viewModel.pages.count
                 )
+                .tag(index)
             }
         }
         .tabViewStyle(PageTabViewStyle())

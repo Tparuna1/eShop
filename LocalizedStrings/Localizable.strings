@@ -7,10 +7,34 @@
 */
 
 //MARK: Onboarding
-"onboarding.welcome_message" = "Welcome to eShop";
-"onboarding.find_your_fav_clothes" = "Find your favourite clothes with us";
-"onboarding.fast_secure" = "Fast & Secure";
-"onboarding.enjoy_with_shopping" = "Enjoy a smooth and secure shopping experience";
+"onboarding.text.welcome_message" = "Welcome to eShop";
+"onboarding.text.find_your_fav_clothes" = "Find your favourite clothes with us";
+"onboarding.text.fast_secure" = "Fast & Secure";
+"onboarding.text.enjoy_with_shopping" = "Enjoy a smooth and secure shopping experience";
 "onboarding.button.next" = "Next";
 "onboarding.button.skip" = "Skip";
 "onboarding.button.get_started" = "Get Started";
+"onboarding.text.create_acount" = "Create account";
+
+
+//MARK: SignIn - SignUp
+"sign_in.button.sign_in" = "Sign In";
+"sign_in.button.sign_up" = "Sign Up";
+"sign_in.text.email_address" = "Email adress";
+"sign_in.text.sample_email_address" = "name@example.com";
+"sign_in.text.password" = "Password";
+"sign_in.text.sample_password" = "Enter password";
+"sign_in.button.do_not_have_an_account_sign_up" = "Do not have an acount? Sign Up";
+"sign_in.text.full_name" = "Full Name";
+"sign_in.text.sample_full_name" = "John Doe";
+"sign_in.text.confirm_password" = "Confirm Password";
+"sign_in.text.sample_confirm_password" = "Re-enter your password";
+"sign_in.button.already_have_an_account_sign_in" = "Already have an account? Sign In";
+"sign_in.alert.email_or_password_cannot_be_empty" = "Email or Password can not be empty.";
+"sign_in.alert.password_must_be_at_least_six_characters" = "Password must be at least 6 characters.";
+"sign_in.alert.passwords_do_not_match" = "Passwords do not match";
+"sign_in.alert.all_fields_must_be_filled" = "All fields must be filled.";
+"sign_in.button.sign_out" = "Sign Out";
+"sign_in.button.delete_account" = "Delete Account";
+"sign_in.text.account" = "Account";
+"sign_in.text.unknown" = "Unknown";

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct OnboardingPage {
+//MARK: - Onboarding Model
+struct OnboardingModel {
     var image: Image
     var title: String
-    var details: String
+    var details: String?
+    var isFinalPage: Bool = false
 }
-
-

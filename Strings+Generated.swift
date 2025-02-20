@@ -11,17 +11,6 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum LocalizedStrings {
   internal enum Onboarding {
-    /// Enjoy a smooth and secure shopping experience
-    internal static let enjoyWithShopping = LocalizedStrings.tr("localizable", "onboarding.enjoy_with_shopping", fallback: "Enjoy a smooth and secure shopping experience")
-    /// Fast & Secure
-    internal static let fastSecure = LocalizedStrings.tr("localizable", "onboarding.fast_secure", fallback: "Fast & Secure")
-    /// Find your favourite clothes with us
-    internal static let findYourFavClothes = LocalizedStrings.tr("localizable", "onboarding.find_your_fav_clothes", fallback: "Find your favourite clothes with us")
-    /// Localizable.strings
-    ///   eShop
-    /// 
-    ///   Created by tornike <parunashvili on 30.01.25.
-    internal static let welcomeMessage = LocalizedStrings.tr("localizable", "onboarding.welcome_message", fallback: "Welcome to eShop")
     internal enum Button {
       /// Get Started
       internal static let getStarted = LocalizedStrings.tr("localizable", "onboarding.button.get_started", fallback: "Get Started")
@@ -29,6 +18,69 @@ internal enum LocalizedStrings {
       internal static let next = LocalizedStrings.tr("localizable", "onboarding.button.next", fallback: "Next")
       /// Skip
       internal static let skip = LocalizedStrings.tr("localizable", "onboarding.button.skip", fallback: "Skip")
+    }
+    internal enum Text {
+      /// Create account
+      internal static let createAcount = LocalizedStrings.tr("localizable", "onboarding.text.create_acount", fallback: "Create account")
+      /// Enjoy a smooth and secure shopping experience
+      internal static let enjoyWithShopping = LocalizedStrings.tr("localizable", "onboarding.text.enjoy_with_shopping", fallback: "Enjoy a smooth and secure shopping experience")
+      /// Fast & Secure
+      internal static let fastSecure = LocalizedStrings.tr("localizable", "onboarding.text.fast_secure", fallback: "Fast & Secure")
+      /// Find your favourite clothes with us
+      internal static let findYourFavClothes = LocalizedStrings.tr("localizable", "onboarding.text.find_your_fav_clothes", fallback: "Find your favourite clothes with us")
+      /// Localizable.strings
+      ///   eShop
+      /// 
+      ///   Created by tornike <parunashvili on 30.01.25.
+      internal static let welcomeMessage = LocalizedStrings.tr("localizable", "onboarding.text.welcome_message", fallback: "Welcome to eShop")
+    }
+  }
+  internal enum SignIn {
+    internal enum Alert {
+      /// All fields must be filled.
+      internal static let allFieldsMustBeFilled = LocalizedStrings.tr("localizable", "sign_in.alert.all_fields_must_be_filled", fallback: "All fields must be filled.")
+      /// Email or Password can not be empty.
+      internal static let emailOrPasswordCannotBeEmpty = LocalizedStrings.tr("localizable", "sign_in.alert.email_or_password_cannot_be_empty", fallback: "Email or Password can not be empty.")
+      /// Password must be at least 6 characters.
+      internal static let passwordMustBeAtLeastSixCharacters = LocalizedStrings.tr("localizable", "sign_in.alert.password_must_be_at_least_six_characters", fallback: "Password must be at least 6 characters.")
+      /// Passwords do not match
+      internal static let passwordsDoNotMatch = LocalizedStrings.tr("localizable", "sign_in.alert.passwords_do_not_match", fallback: "Passwords do not match")
+    }
+    internal enum Button {
+      /// Already have an account? Sign In
+      internal static let alreadyHaveAnAccountSignIn = LocalizedStrings.tr("localizable", "sign_in.button.already_have_an_account_sign_in", fallback: "Already have an account? Sign In")
+      /// Delete Account
+      internal static let deleteAccount = LocalizedStrings.tr("localizable", "sign_in.button.delete_account", fallback: "Delete Account")
+      /// Do not have an acount? Sign Up
+      internal static let doNotHaveAnAccountSignUp = LocalizedStrings.tr("localizable", "sign_in.button.do_not_have_an_account_sign_up", fallback: "Do not have an acount? Sign Up")
+      /// Sign In
+      internal static let signIn = LocalizedStrings.tr("localizable", "sign_in.button.sign_in", fallback: "Sign In")
+      /// Sign Out
+      internal static let signOut = LocalizedStrings.tr("localizable", "sign_in.button.sign_out", fallback: "Sign Out")
+      /// Sign Up
+      internal static let signUp = LocalizedStrings.tr("localizable", "sign_in.button.sign_up", fallback: "Sign Up")
+    }
+    internal enum Text {
+      /// Account
+      internal static let account = LocalizedStrings.tr("localizable", "sign_in.text.account", fallback: "Account")
+      /// Confirm Password
+      internal static let confirmPassword = LocalizedStrings.tr("localizable", "sign_in.text.confirm_password", fallback: "Confirm Password")
+      /// Email adress
+      internal static let emailAddress = LocalizedStrings.tr("localizable", "sign_in.text.email_address", fallback: "Email adress")
+      /// Full Name
+      internal static let fullName = LocalizedStrings.tr("localizable", "sign_in.text.full_name", fallback: "Full Name")
+      /// Password
+      internal static let password = LocalizedStrings.tr("localizable", "sign_in.text.password", fallback: "Password")
+      /// Re-enter your password
+      internal static let sampleConfirmPassword = LocalizedStrings.tr("localizable", "sign_in.text.sample_confirm_password", fallback: "Re-enter your password")
+      /// name@example.com
+      internal static let sampleEmailAddress = LocalizedStrings.tr("localizable", "sign_in.text.sample_email_address", fallback: "name@example.com")
+      /// John Doe
+      internal static let sampleFullName = LocalizedStrings.tr("localizable", "sign_in.text.sample_full_name", fallback: "John Doe")
+      /// Enter password
+      internal static let samplePassword = LocalizedStrings.tr("localizable", "sign_in.text.sample_password", fallback: "Enter password")
+      /// Unknown
+      internal static let unknown = LocalizedStrings.tr("localizable", "sign_in.text.unknown", fallback: "Unknown")
     }
   }
 }

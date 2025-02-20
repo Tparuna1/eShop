@@ -7,18 +7,21 @@
 
 import SwiftUI
 
+//MARK: - Main button
 struct MainButton: View {
     var buttonText: String
-
+    var backgroundColor: Color
+    var textColor: Color
+    
     var body: some View {
         Text(buttonText)
             .fontWeight(.semibold)
-            .kerning(Sizes.Kerning.regular)
+            .kerning(Grid.Kerning.regular)
             .frame(minWidth: .zero, maxWidth: .infinity)
             .padding()
-            .foregroundColor(.babyBlue)
-            .background(Color.cottonWhite)
-            .cornerRadius(Sizes.Spacing.xl4)
-            .padding(.horizontal, Sizes.Spacing.m)
+            .foregroundColor(textColor)
+            .background(backgroundColor)
+            .cornerRadius(Grid.Spacing.s)
+            .padding(.horizontal, Grid.Spacing.m)
     }
 }
