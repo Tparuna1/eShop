@@ -25,11 +25,12 @@ struct ScreenView: View {
                     Text(page.title)
                         .font(.title)
                         .fontWeight(.semibold)
+                        .foregroundColor(.darkBlue)
                         .kerning(Grid.Kerning.thick)
                     
                     Spacer()
                     
-                    SecondaryButton(title: LocalizedStrings.Onboarding.Button.skip, textColor: .mediumBlue) {
+                    SecondaryButton(title: LocalizedStrings.Onboarding.Button.skip, textColor: .darkBlue) {
                         if page.isFinalPage {
                             coordinator.navigate(to: .mainTab)
                         } else {
@@ -52,14 +53,14 @@ struct ScreenView: View {
                     VStack(spacing: Grid.Spacing.m) {
                         MainButton(buttonText: LocalizedStrings.SignIn.Button.signIn,
                                    backgroundColor: .cottonWhite,
-                                   textColor: .babyBlue)
+                                   textColor: .darkBlue)
                         .onTapGesture {
                             coordinator.navigate(to: .signIn)
                         }
                         
                         MainButton(buttonText: LocalizedStrings.SignIn.Button.signUp,
                                    backgroundColor: .cottonWhite,
-                                   textColor: .babyBlue)
+                                   textColor: .darkBlue)
                         .onTapGesture {
                             coordinator.navigate(to: .signUp)
                         }
@@ -69,7 +70,7 @@ struct ScreenView: View {
                 if !page.isFinalPage {
                     MainButton(buttonText: LocalizedStrings.Onboarding.Button.next,
                                backgroundColor: .cottonWhite,
-                               textColor: .babyBlue)
+                               textColor: .darkBlue)
                     .onTapGesture {
                         currentPage += 1
                     }

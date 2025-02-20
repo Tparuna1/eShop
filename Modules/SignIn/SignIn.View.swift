@@ -38,7 +38,7 @@ struct SignInView: View {
                     }
 
                     MainButton(buttonText: LocalizedStrings.SignIn.Button.signIn,
-                               backgroundColor: .mediumBlue,
+                               backgroundColor: .darkBlue,
                                textColor: .cottonWhite)
                         .onTapGesture {
                             Task {
@@ -63,7 +63,7 @@ struct SignInView: View {
                         coordinator.goToLastOnboardingPage()
                     }) {
                         Image.arrowLeft
-                            .foregroundColor(.black)
+                            .foregroundColor(.darkBlue)
                     }
                 }
             }

@@ -24,14 +24,14 @@ struct CustomTabBar: View {
                     VStack {
                         Image(systemName: tab.icon)
                             .font(.system(size: Grid.Spacing.l))
-                            .foregroundColor(selectedTab == tab ? .babyBlue : .spaceGrey)
+                            .foregroundColor(selectedTab == tab ? .darkBlue : .spaceGrey)
                             .scaleEffect(selectedTab == tab ? Grid.Kerning.regular : Grid.Kerning.thin)
                             .animation(.spring(), value: selectedTab)
                         
                         if selectedTab == tab {
                             Circle()
                                 .frame(width: Grid.Spacing.xs, height: Grid.Spacing.xs)
-                                .foregroundColor(.babyBlue)
+                                .foregroundColor(.darkBlue)
                                 .offset(y: Grid.Spacing.xs2)
                         }
                     }
@@ -44,7 +44,6 @@ struct CustomTabBar: View {
             RoundedRectangle(cornerRadius: Grid.Spacing.xl4)
                 .fill(Color.white)
                 .shadow(color: Color.black.opacity(Grid.BorderWidth.superThin), radius: Grid.Spacing.xs, x: .zero, y: Grid.Spacing.xs2)
-                .blur(radius: Grid.BorderWidth.thick)
         )
         .padding(.horizontal, Grid.Spacing.l)
         .padding(.bottom, Grid.Spacing.l)

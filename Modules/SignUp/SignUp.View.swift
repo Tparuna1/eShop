@@ -58,7 +58,7 @@ struct SignUpView: View {
                     if !viewModel.isPasswordEmpty {
                         if !viewModel.passwordMeetsRequirements {
                             Text(LocalizedStrings.SignIn.Alert.passwordMustBeAtLeastSixCharacters)
-                                .foregroundColor(.red)
+                                .foregroundColor(.darkRed)
                                 .font(.caption)
                         }
                     }
@@ -66,7 +66,7 @@ struct SignUpView: View {
                     if !viewModel.isConfirmPasswordEmpty {
                         if !viewModel.passwordsMatch {
                             Text(LocalizedStrings.SignIn.Alert.passwordsDoNotMatch)
-                                .foregroundColor(.red)
+                                .foregroundColor(.darkRed)
                                 .font(.caption)
                         }
                     }
@@ -78,7 +78,7 @@ struct SignUpView: View {
                     }
 
                     MainButton(buttonText: LocalizedStrings.SignIn.Button.signUp,
-                               backgroundColor: .mediumBlue,
+                               backgroundColor: .darkBlue,
                                textColor: .cottonWhite)
                     .onTapGesture {
                         Task {
@@ -98,7 +98,7 @@ struct SignUpView: View {
                         coordinator.goToLastOnboardingPage()
                     }) {
                         Image.arrowLeft
-                            .foregroundColor(.black)
+                            .foregroundColor(.darkBlue)
                     }
                 }
             }
