@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct SettingsRow: View {
-    let imageName: String
+    let icon: Image
     let title: String
     let tintColor: Color
     
     var body: some View {
         HStack(spacing: Grid.Spacing.s) {
-            Image(systemName: imageName)
+            icon
                 .imageScale(.small)
                 .font(.title)
                 .foregroundColor(tintColor)
             
             Text(title)
                 .font(.subheadline)
-                .foregroundColor(.black )
+                .foregroundColor(.black)
         }
     }
 }
 
-#Preview {
-    SettingsRow(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
-}
+//#Preview {
+//    SettingsRow(icon: "gear", title: "Version", tintColor: Color(.systemGray))
+//}

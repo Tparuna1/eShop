@@ -29,4 +29,12 @@
 "sign_in.text.sample_full_name" = "John Doe";
 "sign_in.text.confirm_password" = "Confirm Password";
 "sign_in.text.sample_confirm_password" = "Re-enter your password";
-"lsign_in.button.already_have_an_account_sign_in" = "Already have an account? Sign In";
+"sign_in.button.already_have_an_account_sign_in" = "Already have an account? Sign In";
+"sign_in.alert.email_or_password_cannot_be_empty" = "Email or Password can not be empty.";
+"sign_in.alert.password_must_be_at_least_six_characters" = "Password must be at least 6 characters.";
+"sign_in.alert.passwords_do_not_match" = "Passwords do not match";
+"sign_in.alert.all_fields_must_be_filled" = "All fields must be filled.";
+"sign_in.button.sign_out" = "Sign Out";
+"sign_in.button.delete_account" = "Delete Account";
+"sign_in.text.account" = "Account";
+"sign_in.text.unknown" = "Unknown";

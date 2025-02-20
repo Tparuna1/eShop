@@ -7,21 +7,26 @@
 
 import Foundation
 
-//MARK: - Sign in ViewModel
+// MARK: - SignIn ViewModel
 class SignInViewModel: ObservableObject {
-    @Published var email: String = ""
-    @Published var password: String = ""
-
-    private var signInModel: SignInModel {
-        return SignInModel(email: email, password: password)
-    }
+    @Published var signInModel = SignInModel(email: "", password: "")
+    @Published var errorMessage: String?
     
-    func login() {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("Email or Password cannot be empty.")
+    private let authService = FirebaseAuthentification()
+    
+    @MainActor
+    func signIn() async {
+        guard !signInModel.email.isEmpty, !signInModel.password.isEmpty else {
+            errorMessage = LocalizedStrings.SignIn.Alert.emailOrPasswordCannotBeEmpty
             return
         }
-        print("Logging in with email: \(email) and password: \(password)")
+        
+        do {
+            try await authService.signIn(withEmail: signInModel.email, password: signInModel.password)
+            errorMessage = nil
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 }
 

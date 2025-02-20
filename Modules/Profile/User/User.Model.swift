@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//MARK: - User Model
 struct User: Identifiable, Codable {
     let id: String
     let fullname: String

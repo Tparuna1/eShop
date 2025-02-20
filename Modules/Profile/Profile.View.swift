@@ -7,64 +7,46 @@
 
 import SwiftUI
 
+// MARK: - Profile View
 struct ProfileView: View {
+    @StateObject private var authService = FirebaseAuthentification()
+    @EnvironmentObject private var coordinator: AppCoordinator
+    
     var body: some View {
         List {
             Section {
                 HStack {
-                    Text(User.MOCK_USER.initials)
+                    Text(authService.currentUser?.initials ?? "?")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .frame(width: Grid.Size.small.width, height: Grid.Size.small.height)
-                        .background(Color(.systemGray))
-                        .clipShape(.circle)
+                        .frame(width: Grid.Size.extraSmall.width,
+                               height: Grid.Size.extraSmall.height)
+                        .background(Color.spaceGrey)
+                        .clipShape(Circle())
                     
-                    VStack(alignment: .leading, spacing: Grid.Spacing.xs2) {
-                        Text(User.MOCK_USER.fullname)
+                    VStack(alignment: .leading) {
+                        Text(authService.currentUser?.fullname ?? LocalizedStrings.SignIn.Text.unknown)
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .padding(.top, Grid.Spacing.xs2)
                         
-                        Text(User.MOCK_USER.email)
+                        Text(authService.currentUser?.email ?? LocalizedStrings.SignIn.Text.unknown)
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.spaceGrey)
                     }
                 }
             }
-            Section("General") {
-                HStack {
-                    SettingsRow(imageName: "gear",
-                                title: "Version",
-                                tintColor: Color(.systemGray)
-                    )
-                    
-                    Spacer()
-                    
-                    Text("1.0.0")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                }
-            }
             
-            Section("Account") {
-                Button {
-                    print("Sign out..")
-                } label: {
-                    SettingsRow(imageName: "arrow.left.circle.fill",
-                                title: "Sign Out",
-                                tintColor: .red
-                    )
+            Section(LocalizedStrings.SignIn.Text.account) {
+                Button(action: { authService.signOut(); coordinator.navigate(to: .onboarding) }) {
+                    SettingsRow(icon: .arrowLeftCircleFill,
+                                title: LocalizedStrings.SignIn.Button.signOut,
+                                tintColor: .red)
                 }
-                
-                Button {
-                    print("Delete Account...")
-                } label: {
-                    SettingsRow(imageName: "xmark.circle.fill",
-                                title: "Delete Account",
-                                tintColor: .red
-                    )
+                Button(action: { Task { try? await authService.deleteAccount(); coordinator.navigate(to: .onboarding) } }) {
+                    SettingsRow(icon: .xmarkCircleFill,
+                                title: LocalizedStrings.SignIn.Button.deleteAccount,
+                                tintColor: .red)
                 }
             }
         }

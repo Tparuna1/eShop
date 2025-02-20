@@ -42,6 +42,7 @@ public enum Grid {
     }
     
     public enum Size {
+        public static let extraSmall: CGSize = .init(squareFrame: 50)
         public static let small: CGSize = .init(squareFrame: 100)
         public static let medium: CGSize = .init(squareFrame: 300)
         public static let large: CGSize = .init(squareFrame: 600)

@@ -21,22 +21,32 @@ struct SignInView: View {
                     
                     Spacer()
 
-                    InputView(text: $viewModel.email,
+                    InputView(text: $viewModel.signInModel.email,
                               title: LocalizedStrings.SignIn.Text.emailAddress,
                               placeholder: LocalizedStrings.SignIn.Text.sampleEmailAddress)
                         .autocapitalization(.none)
 
-                    InputView(text: $viewModel.password,
+                    InputView(text: $viewModel.signInModel.password,
                               title: LocalizedStrings.SignIn.Text.password,
                               placeholder: LocalizedStrings.SignIn.Text.samplePassword,
                               isSecureField: true)
+
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding(.top, Grid.Spacing.xs)
+                    }
 
                     MainButton(buttonText: LocalizedStrings.SignIn.Button.signIn,
                                backgroundColor: .mediumBlue,
                                textColor: .cottonWhite)
                         .onTapGesture {
-                            viewModel.login()
-                            coordinator.navigate(to: .profile)
+                            Task {
+                                await viewModel.signIn()
+                                if viewModel.errorMessage == nil {
+                                    coordinator.navigate(to: .profile)
+                                }
+                            }
                         }
                     Spacer()
 
@@ -52,7 +62,7 @@ struct SignInView: View {
                     Button(action: {
                         coordinator.goToLastOnboardingPage()
                     }) {
-                        Image(systemName: "arrow.left")
+                        Image.arrowLeft
                             .foregroundColor(.black)
                     }
                 }
@@ -65,6 +75,7 @@ struct SignInView: View {
         }
     }
 }
+
 
 #Preview {
     SignInView()

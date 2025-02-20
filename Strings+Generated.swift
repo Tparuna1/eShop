@@ -10,12 +10,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum LocalizedStrings {
-  internal enum LsignIn {
-    internal enum Button {
-      /// Already have an account? Sign In
-      internal static let alreadyHaveAnAccountSignIn = LocalizedStrings.tr("localizable", "lsign_in.button.already_have_an_account_sign_in", fallback: "Already have an account? Sign In")
-    }
-  }
   internal enum Onboarding {
     internal enum Button {
       /// Get Started
@@ -42,15 +36,33 @@ internal enum LocalizedStrings {
     }
   }
   internal enum SignIn {
+    internal enum Alert {
+      /// All fields must be filled.
+      internal static let allFieldsMustBeFilled = LocalizedStrings.tr("localizable", "sign_in.alert.all_fields_must_be_filled", fallback: "All fields must be filled.")
+      /// Email or Password can not be empty.
+      internal static let emailOrPasswordCannotBeEmpty = LocalizedStrings.tr("localizable", "sign_in.alert.email_or_password_cannot_be_empty", fallback: "Email or Password can not be empty.")
+      /// Password must be at least 6 characters.
+      internal static let passwordMustBeAtLeastSixCharacters = LocalizedStrings.tr("localizable", "sign_in.alert.password_must_be_at_least_six_characters", fallback: "Password must be at least 6 characters.")
+      /// Passwords do not match
+      internal static let passwordsDoNotMatch = LocalizedStrings.tr("localizable", "sign_in.alert.passwords_do_not_match", fallback: "Passwords do not match")
+    }
     internal enum Button {
+      /// Already have an account? Sign In
+      internal static let alreadyHaveAnAccountSignIn = LocalizedStrings.tr("localizable", "sign_in.button.already_have_an_account_sign_in", fallback: "Already have an account? Sign In")
+      /// Delete Account
+      internal static let deleteAccount = LocalizedStrings.tr("localizable", "sign_in.button.delete_account", fallback: "Delete Account")
       /// Do not have an acount? Sign Up
       internal static let doNotHaveAnAccountSignUp = LocalizedStrings.tr("localizable", "sign_in.button.do_not_have_an_account_sign_up", fallback: "Do not have an acount? Sign Up")
       /// Sign In
       internal static let signIn = LocalizedStrings.tr("localizable", "sign_in.button.sign_in", fallback: "Sign In")
+      /// Sign Out
+      internal static let signOut = LocalizedStrings.tr("localizable", "sign_in.button.sign_out", fallback: "Sign Out")
       /// Sign Up
       internal static let signUp = LocalizedStrings.tr("localizable", "sign_in.button.sign_up", fallback: "Sign Up")
     }
     internal enum Text {
+      /// Account
+      internal static let account = LocalizedStrings.tr("localizable", "sign_in.text.account", fallback: "Account")
       /// Confirm Password
       internal static let confirmPassword = LocalizedStrings.tr("localizable", "sign_in.text.confirm_password", fallback: "Confirm Password")
       /// Email adress
@@ -67,6 +79,8 @@ internal enum LocalizedStrings {
       internal static let sampleFullName = LocalizedStrings.tr("localizable", "sign_in.text.sample_full_name", fallback: "John Doe")
       /// Enter password
       internal static let samplePassword = LocalizedStrings.tr("localizable", "sign_in.text.sample_password", fallback: "Enter password")
+      /// Unknown
+      internal static let unknown = LocalizedStrings.tr("localizable", "sign_in.text.unknown", fallback: "Unknown")
     }
   }
 }
