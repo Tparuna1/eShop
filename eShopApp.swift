@@ -35,8 +35,8 @@ struct RootView: View {
             SignUpView()
         case .signIn:
             SignInView()
-        case .profile:
-            ProfileView()
+        case .mainTab:
+            MainTabView()
         }
     }
 }

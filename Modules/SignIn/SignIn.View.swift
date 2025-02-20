@@ -44,7 +44,7 @@ struct SignInView: View {
                             Task {
                                 await viewModel.signIn()
                                 if viewModel.errorMessage == nil {
-                                    coordinator.navigate(to: .profile)
+                                    coordinator.navigate(to: .mainTab)
                                 }
                             }
                         }
