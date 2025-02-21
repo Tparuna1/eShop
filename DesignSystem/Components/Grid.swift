@@ -40,8 +40,8 @@ public enum Grid {
     }
 
     public enum CornerRadius {
-        public static let textField: CGFloat = 10.0
-        public static let button: CGFloat = 24.0
+        public static let small: CGFloat = 10.0
+        public static let large: CGFloat = 24.0
     }
     
     public enum Size {
@@ -49,5 +49,9 @@ public enum Grid {
         public static let small: CGSize = .init(squareFrame: 100)
         public static let medium: CGSize = .init(squareFrame: 300)
         public static let large: CGSize = .init(squareFrame: 600)
+    }
+    
+    public enum Height {
+        public static let medium: CGFloat = 200
     }
 }

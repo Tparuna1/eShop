@@ -8,10 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var viewModel = HomeViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                if !viewModel.bannerImages.isEmpty {
+                    BannerCarousel(images: viewModel.bannerImages)
+                        .frame(height: Grid.Height.medium)
+                        .padding(.top)
+                }
+
+                ScrollView {
+                    Text("Products Section Here")
+                        .padding()
+                }
+            }
+            .navigationTitle("Home")
+            .background(Color.darkBlue)
+            
+            VStack {
+                
+            }
+        }
     }
 }
+
 
 #Preview {
     HomeView()
