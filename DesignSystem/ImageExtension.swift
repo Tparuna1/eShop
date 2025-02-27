@@ -16,6 +16,7 @@ extension Image {
     static let arrowLeftCircleFill = Image(systemName: "arrow.left.circle.fill")
     static let xmarkCircleFill = Image(systemName: "xmark.circle.fill")
     static let arrowLeft = Image(systemName: "arrow.left")
+    static let heartFill = Image(systemName: "heart.fill")
     static let houseFill = "house.fill"
     static let bagFill = "bag.fill"
     static let cartFill = "cart.fill"

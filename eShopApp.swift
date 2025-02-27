@@ -26,6 +26,8 @@ struct eShopApp: App {
 
 struct RootView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
+    @StateObject private var homeViewModel = HomeViewModel()
+    @StateObject private var cartViewModel = CartViewModel()
 
     var body: some View {
         switch coordinator.currentScreen {
@@ -37,7 +39,10 @@ struct RootView: View {
             SignInView()
         case .mainTab:
             MainTabView()
+                .environmentObject(homeViewModel)
+                .environmentObject(cartViewModel)
+        case .favProducts:
+            FavProductsView()
         }
     }
 }
-

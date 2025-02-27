@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct CartView: View {
+    @EnvironmentObject var cartViewModel: CartViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if cartViewModel.cartItems.isEmpty {
+                Text("Your cart is empty.")
+                    .foregroundColor(.gray)
+            } else {
+                List(cartViewModel.cartItems) { product in
+                    ProductCard(product: product)
+                }
+            }
+        }
+        .navigationTitle("Cart")
     }
 }
 

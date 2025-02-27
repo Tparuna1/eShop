@@ -13,4 +13,5 @@ enum AppScreen {
     case signUp
     case signIn
     case mainTab
+    case favProducts
 }

@@ -13,7 +13,7 @@ struct MainTabView: View {
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                HomeView()
+                HomeView(viewModel: HomeViewModel())
                     .tag(Tab.home)
                 ShopView()
                     .tag(Tab.shop)

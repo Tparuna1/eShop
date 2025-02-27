@@ -13,7 +13,6 @@ struct ProductModel: Identifiable, Codable {
     let description: String
     let imageURL: String
     let price: Int
-    let company: String
     let rating: Int
     let type: String
     let isFavorite: Bool

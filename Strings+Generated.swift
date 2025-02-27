@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum LocalizedStrings {
+  internal enum Home {
+    internal enum Text {
+      /// Home
+      internal static let home = LocalizedStrings.tr("localizable", "home.text.home", fallback: "Home")
+      /// Sales Products
+      internal static let salesProducts = LocalizedStrings.tr("localizable", "home.text.sales_products", fallback: "Sales Products")
+    }
+  }
   internal enum Onboarding {
     internal enum Button {
       /// Get Started

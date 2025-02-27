@@ -5,20 +5,33 @@
 //  Created by tornike <parunashvili on 20.02.25.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 final class HomeViewModel: ObservableObject {
     @Published var bannerImages: [String] = []
+    @Published var salesProducts: [ProductModel] = []
+    @Published var cartItems: [ProductModel] = []
+    
     private let storageService = StorageService()
+    private let firestoreService = FirestoreService.shared
 
-    init() {
+    
+    var cartViewModel: CartViewModel?
+
+    init(cartViewModel: CartViewModel? = nil) {
+        if let cartViewModel = cartViewModel {
+            self.cartViewModel = cartViewModel
+        } else {
+            self.cartViewModel = CartViewModel()
+        }
         Task {
             await fetchBannerImages()
+            await fetchSalesProducts()
         }
     }
-    
-    // Fetches banner images from Firebase Storage
+
+    /// Fetch banner images from Firebase Storage
     func fetchBannerImages() async {
         do {
             let images = try await storageService.fetchBannerImages()
@@ -27,31 +40,25 @@ final class HomeViewModel: ObservableObject {
             print("Failed to fetch banner images:", error.localizedDescription)
         }
     }
-    
-    // Add a sample product to Firestore using async/await
-    func addSampleProduct() async {
-        let newProduct = ProductModel(
-            id: UUID().uuidString,
-            name: "Sample Product",
-            description: "This is a sample product",
-            imageURL: "https://your-image-url.com", // Add your image URL here
-            price: 1999,
-            company: "Sample Company",
-            rating: 4,
-            type: "T-Shirt",
-            isFavorite: false,
-            color: "Red",
-            size: "M",
-            discount: 10
-        )
-        
+
+    /// Fetch sales products from Firestore
+    func fetchSalesProducts() async {
         do {
-            try await FirestoreService.shared.addProduct(product: newProduct)
-            print("Product added successfully")
+            let products = try await firestoreService.fetchProducts()
+            salesProducts = products.filter { $0.discount > .zero } /// Shows only discounted products
         } catch {
-            print("Error adding product: \(error.localizedDescription)")
+            print("Failed to fetch sales products:", error.localizedDescription)
         }
     }
+
+    /// Add product to cart
+    func addToCart(product: ProductModel) {
+        print("addToCart in HomeViewModel triggered for product: \(product.name)")
+        cartViewModel?.addToCart(product: product)
+    }
+
+    /// Update favorite status for a product
+    func updateFavoriteStatus(on product: ProductModel, isFavorite: Bool) {
+        firestoreService.updateFavoriteStatus(on: product, isFavorite: isFavorite)
+    }
 }
-
-

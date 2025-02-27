@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
+    @EnvironmentObject private var coordinator: AppCoordinator
 
     var body: some View {
         NavigationStack {
@@ -20,21 +21,61 @@ struct HomeView: View {
                 }
 
                 ScrollView {
-                    Text("Products Section Here")
-                        .padding()
+                    VStack(alignment: .leading) {
+                        if !viewModel.salesProducts.isEmpty {
+                            Text(LocalizedStrings.Home.Text.salesProducts)
+                                .font(.title2)
+                                .bold()
+                                .padding(.horizontal)
+
+                            SalesProductsView(
+                                products: viewModel.salesProducts,
+                                favoriteAction: viewModel.updateFavoriteStatus,
+                                addToCartAction: viewModel.addToCart
+                            )
+                        }
+                    }
                 }
             }
-            .navigationTitle("Home")
+            .navigationTitle(LocalizedStrings.Home.Text.home)
             .background(Color.darkBlue)
-            
-            VStack {
-                
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        coordinator.navigate(to: .favProducts)
+                    }) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.red)
+                    }
+                }
             }
         }
     }
 }
 
+struct SalesProductsView: View {
+    let products: [ProductModel]
+    var favoriteAction: ((ProductModel, Bool) -> Void)?
+    var addToCartAction: ((ProductModel) -> Void)?
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: Grid.Spacing.m) {
+                ForEach(products) { product in
+                    ProductCard(
+                        product: product,
+                        favoriteAction: favoriteAction,
+                        addToCartAction: addToCartAction
+                    )
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+}
 
 #Preview {
-    HomeView()
+    HomeView(viewModel: HomeViewModel())
 }
+
+

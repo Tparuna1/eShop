@@ -38,3 +38,8 @@
 "sign_in.button.delete_account" = "Delete Account";
 "sign_in.text.account" = "Account";
 "sign_in.text.unknown" = "Unknown";
+
+
+//MARK: Home
+"home.text.sales_products" = "Sales Products";
+"home.text.home" = "Home";
