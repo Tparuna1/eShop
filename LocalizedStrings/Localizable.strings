@@ -43,3 +43,11 @@
 //MARK: Home
 "home.text.sales_products" = "Sales Products";
 "home.text.home" = "Home";
+
+//MARK: Cart
+"cart.text.your_cart_is_empty" = "Your cart is empty.";
+"cart.text.cart" = "Cart";
+
+//MARK: Favourite Products
+"favproducts.text.favourite_products_list_is_empty" = "Favourite products list is empty.";
+"favproducts.text.favourite_products" = "Favourite Products";

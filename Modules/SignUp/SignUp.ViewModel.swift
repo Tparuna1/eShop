@@ -34,7 +34,7 @@ class SignUpViewModel: ObservableObject {
         }
         
         do {
-            let user: () = try await authService.createAccount(withEmail: signUpModel.email, password: signUpModel.password, fullname: signUpModel.fullName)
+            let _: () = try await authService.createAccount(withEmail: signUpModel.email, password: signUpModel.password, fullname: signUpModel.fullName)
             self.errorMessage = nil
         } catch let error as NSError {
             self.errorMessage = "Error creating account: \(error.localizedDescription)"

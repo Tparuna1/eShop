@@ -44,7 +44,7 @@ struct HomeView: View {
                     Button(action: {
                         coordinator.navigate(to: .favProducts)
                     }) {
-                        Image(systemName: "heart.fill")
+                        Image.heartFill
                             .foregroundColor(.red)
                     }
                 }

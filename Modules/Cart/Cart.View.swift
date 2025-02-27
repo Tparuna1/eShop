@@ -20,7 +20,7 @@ struct CartView: View {
         NavigationStack {
             VStack {
                 if cartViewModel.cart.items.isEmpty {
-                    Text("Your cart is empty.")
+                    Text(LocalizedStrings.Cart.Text.yourCartIsEmpty)
                         .font(.title)
                         .foregroundColor(.gray)
                         .padding()
@@ -43,7 +43,7 @@ struct CartView: View {
                     }
                 }
             }
-            .navigationTitle("Cart")
+            .navigationTitle(LocalizedStrings.Cart.Text.cart)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

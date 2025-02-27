@@ -10,6 +10,22 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum LocalizedStrings {
+  internal enum Cart {
+    internal enum Text {
+      /// Cart
+      internal static let cart = LocalizedStrings.tr("localizable", "cart.text.cart", fallback: "Cart")
+      /// Your cart is empty.
+      internal static let yourCartIsEmpty = LocalizedStrings.tr("localizable", "cart.text.your_cart_is_empty", fallback: "Your cart is empty.")
+    }
+  }
+  internal enum Favproducts {
+    internal enum Text {
+      /// Favourite Products
+      internal static let favouriteProducts = LocalizedStrings.tr("localizable", "favproducts.text.favourite_products", fallback: "Favourite Products")
+      /// Favourite products list is empty.
+      internal static let favouriteProductsListIsEmpty = LocalizedStrings.tr("localizable", "favproducts.text.favourite_products_list_is_empty", fallback: "Favourite products list is empty.")
+    }
+  }
   internal enum Home {
     internal enum Text {
       /// Home

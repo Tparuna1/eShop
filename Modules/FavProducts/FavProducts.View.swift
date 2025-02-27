@@ -20,7 +20,7 @@ struct FavProductsView: View {
         NavigationStack {
             VStack {
                 if viewModel.likedProducts.isEmpty {
-                    Text("No favorite products available.")
+                    Text(LocalizedStrings.Favproducts.Text.favouriteProductsListIsEmpty)
                         .font(.title)
                         .foregroundColor(.gray)
                         .padding()
@@ -35,7 +35,7 @@ struct FavProductsView: View {
                     }
                 }
             }
-            .navigationTitle("Favorite Products")
+            .navigationTitle(LocalizedStrings.Favproducts.Text.favouriteProducts)
             .background(Color.darkBlue)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
