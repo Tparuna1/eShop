@@ -8,21 +8,38 @@
 import SwiftUI
 
 class CartViewModel: ObservableObject {
-    @Published var cartItems: [ProductModel] = []
+    @Published var cart: CartModel = CartModel(items: [])
     
+    private let storageKey = "cart_items"
+    
+    init() {
+        loadCartFromStorage()
+    }
+    
+    /// Add product to cart and persist it
     func addToCart(product: ProductModel) {
-        print("addToCart in CartViewModel triggered for product: \(product.name)")
-        
-        if !cartItems.contains(where: { $0.id == product.id }) {
-            cartItems.append(product)
-            print("Product added to cart: \(product.name)")
-        } else {
-            print("Product is already in cart: \(product.name)")
+        cart.addProduct(product)
+        saveCartToStorage()
+    }
+    
+    /// Remove product from cart
+    func removeFromCart(product: ProductModel) {
+        cart.removeProduct(product)
+        saveCartToStorage()
+    }
+    
+    /// Save cart to persistent storage
+    private func saveCartToStorage() {
+        if let encoded = try? JSONEncoder().encode(cart) {
+            UserDefaults.standard.set(encoded, forKey: storageKey)
         }
     }
-
-    func removeFromCart(product: ProductModel) {
-        cartItems.removeAll { $0.id == product.id }
+    
+    /// Load cart from persistent storage
+    func loadCartFromStorage() {
+        if let savedData = UserDefaults.standard.data(forKey: storageKey),
+           let decoded = try? JSONDecoder().decode(CartModel.self, from: savedData) {
+            cart = decoded
+        }
     }
 }
-

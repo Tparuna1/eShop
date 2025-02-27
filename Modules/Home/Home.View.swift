@@ -65,7 +65,7 @@ struct SalesProductsView: View {
                     ProductCard(
                         product: product,
                         favoriteAction: favoriteAction,
-                        addToCartAction: addToCartAction
+                        addToCartAction: addToCartAction, isInCart: false
                     )
                 }
             }

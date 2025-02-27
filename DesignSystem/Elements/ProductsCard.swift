@@ -12,6 +12,8 @@ struct ProductCard: View {
     @State private var isLiked: Bool = false
     var favoriteAction: ((ProductModel, Bool) -> Void)?
     var addToCartAction: ((ProductModel) -> Void)?
+    var removeFromCartAction: ((ProductModel) -> Void)?
+    var isInCart: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: Grid.Spacing.xs) {
@@ -60,17 +62,32 @@ struct ProductCard: View {
                 }
             }
 
-            Button(action: {
-                addToCartAction?(product) // Trigger add to cart
-            }) {
-                Text("Add to Cart")
-                    .font(.footnote)
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 6)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+            if isInCart {
+                Button(action: {
+                    removeFromCartAction?(product) // Remove from cart
+                }) {
+                    Text("Remove from Cart")
+                        .font(.footnote)
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+            } else {
+                Button(action: {
+                    addToCartAction?(product) // Add to cart
+                }) {
+                    Text("Add to Cart")
+                        .font(.footnote)
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
             }
         }
         .frame(width: Grid.Size.mediumSmall.width)
@@ -79,4 +96,5 @@ struct ProductCard: View {
         }
     }
 }
+
 

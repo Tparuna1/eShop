@@ -28,7 +28,7 @@ struct FavProductsView: View {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: Grid.Spacing.m) {
                             ForEach(viewModel.likedProducts) { product in
-                                ProductCard(product: product, favoriteAction: nil)
+                                ProductCard(product: product, favoriteAction: nil, isInCart: false)
                             }
                         }
                         .padding()
