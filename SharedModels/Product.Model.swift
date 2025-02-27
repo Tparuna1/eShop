@@ -19,5 +19,6 @@ struct ProductModel: Identifiable, Codable {
     let color: String
     let size: String
     let discount: Int
+    let category: String
 }
 

@@ -11,37 +11,26 @@ struct CartView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     @EnvironmentObject var coordinator: AppCoordinator
 
-    let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: Grid.Spacing.m),
-        GridItem(.flexible(), spacing: Grid.Spacing.m)
-    ]
-
     var body: some View {
         NavigationStack {
             VStack {
-                if cartViewModel.cart.items.isEmpty {
-                    Text(LocalizedStrings.Cart.Text.yourCartIsEmpty)
-                        .font(.title)
-                        .foregroundColor(.gray)
-                        .padding()
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: Grid.Spacing.m) {
-                            ForEach(cartViewModel.cart.items) { product in
-                                ProductCard(
-                                    product: product,
-                                    favoriteAction: { _, _ in },
-                                    addToCartAction: { _ in },
-                                    removeFromCartAction: { product in
-                                        cartViewModel.removeFromCart(product: product)
-                                    },
-                                    isInCart: true
-                                )
-                            }
-                        }
-                        .padding()
+                ProductGridView(
+                    items: cartViewModel.cart.items,
+                    productCardAction: { product in
+                        cartViewModel.removeFromCart(product: product)
+                    }, emptyText: LocalizedStrings.Cart.Text.yourCartIsEmpty,
+                    productCard: { product in
+                        ProductCard(
+                            product: product,
+                            favoriteAction: { _, _ in },
+                            addToCartAction: { _ in },
+                            removeFromCartAction: { product in
+                                cartViewModel.removeFromCart(product: product)
+                            },
+                            isInCart: true
+                        )
                     }
-                }
+                )
             }
             .navigationTitle(LocalizedStrings.Cart.Text.cart)
             .navigationBarTitleDisplayMode(.inline)

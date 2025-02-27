@@ -11,29 +11,20 @@ struct FavProductsView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @StateObject private var viewModel = FavProductsViewModel()
 
-    private let columns = [
-        GridItem(.flexible(), spacing: Grid.Spacing.m),
-        GridItem(.flexible(), spacing: Grid.Spacing.m)
-    ]
-
     var body: some View {
         NavigationStack {
             VStack {
-                if viewModel.likedProducts.isEmpty {
-                    Text(LocalizedStrings.Favproducts.Text.favouriteProductsListIsEmpty)
-                        .font(.title)
-                        .foregroundColor(.gray)
-                        .padding()
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: Grid.Spacing.m) {
-                            ForEach(viewModel.likedProducts) { product in
-                                ProductCard(product: product, favoriteAction: nil, isInCart: false)
-                            }
-                        }
-                        .padding()
+                ProductGridView(
+                    items: viewModel.likedProducts,
+                    productCardAction: { _ in }, emptyText: LocalizedStrings.Favproducts.Text.favouriteProductsListIsEmpty,
+                    productCard: { product in
+                        ProductCard(
+                            product: product,
+                            favoriteAction: nil,
+                            isInCart: false
+                        )
                     }
-                }
+                )
             }
             .navigationTitle(LocalizedStrings.Favproducts.Text.favouriteProducts)
             .background(Color.darkBlue)
